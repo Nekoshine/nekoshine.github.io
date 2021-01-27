@@ -1,0 +1,150 @@
+/* || General setup */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+html {
+  font-size: 10px;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  width: 70%;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  color: #2a2a2a;
+}
+
+p, input {
+  font-family: 'Raleway', sans-serif;
+  color: #2a2a2a;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 10px black;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.2rem;
+}
+
+p, li {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+li a  {
+  color: white;
+}
+.liens {
+  color:white;
+}
+
+/* MenuBar*/
+.menubar  {
+  display: block;
+  color: white;
+  text-align: center;
+  padding:0px 20px;
+  text-decoration: none;
+  transition:all 1s;
+}
+
+li a:hover  {
+  background-color: red;
+}
+
+nav, article, aside, footer {
+  background-color: white;
+  padding: 1%;
+}
+
+
+nav {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+nav li {
+  float:left;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+input[type="search"] {
+  flex: 3;
+}
+
+input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: white ;
+  border: 0;
+  color: white;
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article {
+  flex: 4;
+}
+
+aside {
+  flex: 1;
+  margin-left: 10px;
+  background-color: black;
+}
+
+aside li {
+  padding-bottom: 10px;
+}
+
+footer {
+  margin-top: 10px;
+}
