@@ -80,15 +80,16 @@ function workerloop(){
   clock=setInterval(function(){
     
     if (window.Worker) {
+      var x,y;
       const myWorker = new Worker("./workerCoord.js");
       myWorker.postMessage(1);
       myWorker.onmessage = function(e) {
-        var x = e.data;
+        x = e.data;
         console.log('Message received from worker');
       }
       myWorker.postMessage(1);
       myWorker.onmessage = function(e) {
-        var y = e.data;
+        y = e.data;
         console.log('Message received from worker');
       }
       ctx.beginPath();
