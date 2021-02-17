@@ -71,4 +71,32 @@
     </aside>
   </main>
 </body>
+<canvas id="canvas" width="200" height="200"></canvas>
+<script>
+var canvas=document.getElementById('canvas');
+var ctx= canvas.getContext('2d');
+
+function workerloop(){
+  clock=setInterval(function(){
+    
+    if (window.Worker) {
+      const myWorker = new Worker("./workerCoord.js");
+      myWorker.postMessage();
+      myWorker.onmessage = function(e) {
+        var x = e.data;
+        console.log('Message received from worker');
+      }
+      myWorker.postMessage();
+      myWorker.onmessage = function(e) {
+        var y = e.data;
+        console.log('Message received from worker');
+      }
+      ctx.beginPath();
+      ctx.arc(x,y,10,0,2*Math.PI,false);
+      ctx.stroke();
+    }
+  },1000);
+}
+document.addEventListener("DOMContentLoaded",workerloop);
+</script>
 </html>
