@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Accueil</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+</head>
+
+<header>
+  <h1>Sith Ouèbe de Esteban Cormier</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="menubar"  href="./index.html">Accueil</a></li>
+    <li><a  class="menubar"  href="./Oldindex.html">HTML</a></li>
+    <li><a  class="menubar" href="./tp_js_2_exo1.html">JS</a></li>
+    <li><a  class="menubar" href="./index.html">PHP</a></li>
+    <li><a  class="menubar" href="./CV.html">Qui suis-je ?</a></li>
+  </ul>
+  
+</nav>
+<body>
+  <main>
+    <article>
+      
+      <p>
+        Here is a sample code for using a <a href="https://developer.mozilla.org/fr/docs/Web/API/Web_Workers_API/Utilisation_des_web_workers">Web Worker</a>. In short, Web Workers are a simple means for web content to run scripts in background threads.
+      </p>
+      <p>
+        Here the task is to multiply 2 members : when one of the field text is changed, the web worker is notified and perform its (background) task.
+      </p>
+      <p>
+        Notice that web workers have workspace of their own. They cannot access directly the DOM neither. In order to pass parameters to and from the web worker, a messaging mecanism is used.
+      </p>
+      
+      
+      <form>
+        <div>
+          <label for="number1">Multiply number 1: </label>
+          <input type="text" id="number1" value="0">
+        </div>
+        <div>
+          <label for="number2">Multiply number 2: </label>
+          <input type="text" id="number2" value="0">
+        </div>
+      </form>
+      
+      
+      <p class="result">Result: 0</p>
+      
+      
+      <h2>What do I expect from you? (ask for a live demo)</h2>
+      <p>
+        Create a web worker that will produce random 2D coordinates at random time (with mean time = 1sec). The webpage should display a red spot at those coordinates.
+      </p>
+      <p>
+        Then, create 10 web workers that will produce random 2D coordinates at random time (with mean time = 1sec). The webpage should display a  spot at those coordinates with a different color for each web worker. You must used Object Oriented Programming.
+      </p>
+    </article>
+    <article>
+      <aside>
+        <h2 class="liens">Liens rapides</h2>
+        <ul class="listeLiens">
+          <li><a href="./tp_js_2_exo1.html">TP2</a></li>
+          <li><a href="./tp_js_3_ajax.html">TP3</a></li>
+          <li><a href="./tp_js_4_worker.html">TP4</a></li>
+          <li><a href="#">JSP</a>relation4</li>
+        </ul>
+      </aside>
+    </article>
+  </main>
+</body>
+</html>

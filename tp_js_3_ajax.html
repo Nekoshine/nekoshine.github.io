@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Accueil</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+</head>
+
+<header>
+  <h1>Sith Ouèbe de Esteban Cormier</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="menubar"  href="./index.html">Accueil</a></li>
+    <li><a  class="menubar"  href="./Oldindex.html">HTML</a></li>
+    <li><a  class="menubar" href="./tp_js_2_exo1.html">JS</a></li>
+    <li><a  class="menubar" href="./index.html">PHP</a></li>
+    <li><a  class="menubar" href="./CV.html">Qui suis-je ?</a></li>
+  </ul>
+  
+</nav>
+<body>
+  <main>
+    <article>
+      <h2>The "A" in AJAX stands for "Asynchronous"</h2>
+      
+      <p>I've build a web service on Heroku : <a href="https://stwom.herokuapp.com/">https://stwom.herokuapp.com/</a>.
+      </p>  <br>
+      <p>  Try and send a GET request to https://stwom.herokuapp.com/<b>int</b> with <b>int</b> an integer : you will receive a JSON object <code>{x:...,y:...}</code> with x and y between 0 and <b>int</b>. This object can be considered as coordinates.
+      </p>  <br>
+      <p>  Your job is to use the XHR object to ask for coordinates every seconds and then display a circle in a canvas at those coordinates.
+      </p>
+      
+      <h2>Des promesses, toujours des promesses...</h2>
+      
+      <p>  Do the exact same thing as above but use the <a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API">FETCH API</a> instead.
+      </p>
+    </article>
+    
+  </article>
+  <aside>
+    <h2 class="liens">Liens rapides</h2>
+    <ul class="listeLiens">
+      <li><a href="./tp_js_2_exo1.html">TP2</a></li>
+      <li><a href="./tp_js_3_ajax.html">TP3</a></li>
+      <li><a href="./tp_js_4_worker.html">TP4</a></li>
+      <li><a href="#">JSP</a>relation4</li>
+    </ul>
+  </aside>
+</main>
+<canvas id="canvas" width="200" height="200"></canvas>
+<script>
+var canvas=document.getElementById('canvas');
+var ctx= canvas.getContext('2d');
+/*
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange= function(){
+if(xhr.readyState==4 && xhr.status ==200){
+console.log(xhr.response.x);
+ctx.beginPath();
+ctx.arc(xhr.response.x,xhr.response.y,10,0,2*Math.PI,false);
+ctx.stroke();
+}
+};
+*/
+function gameloop(){
+  clock=setInterval(function(){/*
+    xhr.open('GET', 'https://stwom.herokuapp.com/200');
+    xhr.responseType='json';
+    xhr.send();*/
+    
+    fetch('https://stwom.herokuapp.com/200',{method: 'GET'})
+    .then(response => response.json()).then(function(response){
+      ctx.beginPath();
+      ctx.arc(response.x,response.y,10,0,2*Math.PI,false);
+      ctx.stroke();
+    })
+    .catch(error=>console.error('error: ',error));
+  },1000);
+}
+
+
+document.addEventListener("DOMContentLoaded",gameloop);
+
+</script>
+
+
+</body>
+
+
+</html>

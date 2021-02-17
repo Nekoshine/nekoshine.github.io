@@ -7,121 +7,170 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   
-  
-  <header>
-    <h1>Sith Ouèbe de Esteban Cormier</h1>
-  </header>
-  
-  <nav>
-    <ul>
-      <li><a class="menubar"  href="./index.html">Accueil</a></li>
-      <li><a  class="menubar"  href="./Oldindex.html">HTML</a></li>
-      <li><a  class="menubar" href="./tp_js_2_exo1.html">JS</a></li>
-      <li><a  class="menubar" href="./index.html">PHP</a></li>
-      <li><a  class="menubar" href="./CV.html">Qui suis-je ?</a></li>
-    </ul>
-    
-  </nav>
 </head>
-<body>
+
+<header>
+  <h1>Sith Ouèbe de Esteban Cormier</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="menubar"  href="./index.html">Accueil</a></li>
+    <li><a  class="menubar"  href="./Oldindex.html">HTML</a></li>
+    <li><a  class="menubar" href="./tp_js_2_exo1.html">JS</a></li>
+    <li><a  class="menubar" href="./index.html">PHP</a></li>
+    <li><a  class="menubar" href="./CV.html">Qui suis-je ?</a></li>
+  </ul>
   
-  <button onclick="lancerCompteur()">Lancer le décompte</button>
-  <div id = "decompte"></div>
-  <div id="image"></div>
-  
-  <button onclick="lancerDeplacement()">Lancer le déplacement</button>
-  <div id "deplacement"></div>
-  
-  
-  
-  <script>
-  var compteur=2;
-  var intervalId = null;
-  function lancerCompteur(){
-    intervalId = setInterval(tic, 1000);
-  }
-  
-  function tic() {
-    compteur--;
-    if(compteur==0) fin();
-    else {
-      document.getElementById("decompte").innerHTML=compteur+" secondes restantes";
+</nav>
+<main>
+  <article>
+    <h2>JS_TP_2</h2>
+    <p>Vous avez compris? Pour chaque exercice, faite part de votre conclusion à votre encadrant. (N'attendez pas qu'il vous sollicite, exprimez-vous!)
+    </p>  <br>
+    
+    
+    <h2>Callbacks : Introducing SetInterval and ClearInterval</h2>
+    <p>Produisez une page html "tp_js_2_exo1.html" présentant un compteur initialisé à 10 secondes et comptant à rebours, à raison d’une unité par seconde.
+    </p>
+    <p>Le décompte doit s’arrêter à 0 secondes. Vous utiliserez pour cela la fonction <a href="https://developer.mozilla.org/fr/docs/Web/API/WindowTimers/setInterval">setInterval</a> et <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval">clearInterval</a>.
+    </p>  <br>
+    
+    
+    <h2>Let's move : Setinterval &amp; Canevas</h2>
+    <p>  Produisez une page html "tp_js_2_exo2.html" présentant un carré rouge (50px * 50px) se déplaçant du bord gauche d'un canevas (600x600) vers le bord
+      droit à raison de 10 pixels par dixième de seconde. Attention, le carré doit s'arrêter une fois que son bord droit a touché le bord droit du canevas.
+    </p><br>
+    
+    
+    <h2>Wait a minute! </h2>
+    <p>  Produisez une page html "tp_js_2_exo3.html" présentant le même carré rouge se déplaçant du bord gauche d'un canevas vers le bord droit à la même vitesse... mais cette fois, le carré débuttera son déplacement 2 secondes après la fin du
+      chargement de la page.</p>
+      <br>
+      
+      
+      <h2>"Play it again, Sam" : introducing objects</h2>
+      <p>  Produisez une page html "tp_js_2_exo4.html" présentant 3 carrés rouges se déplaçant du bord gauche du canvas vers le bord
+        droit à raison de 10 pixels par dixième de seconde. Les départs des carrés seront espacés de 1 seconde, 4 secondes
+        après la fin du chargement de la page.</p>
+        
+        <ul>
+          <li>Utilisez maintenant des Objets. Chaque carré est un objet qui a la charge de s'effacer du canevas (méthode "clear"), de modifier ses coordonnées en fonction de l'horloge, de sa vitesse et de sa position (méthode "update") et de s'afficher (méthode "draw"). </li>
+          <li>N'utilisez qu'une seule invocation de SetInterval pour tout le programme . </li>
+        </ul>
+        <br>
+        
+        
+        <button onclick="lancerCompteur()">Lancer le décompte</button>
+        <div id = "decompte"></div>
+        <div id="image"></div>
+        
+        <button onclick="lancerDeplacement()">Lancer le déplacement</button>
+        <div id "deplacement"></div>
+        
+      </article>
+      <aside>
+        <h2 class="liens">Liens rapides</h2>
+        <ul class="listeLiens">
+          <li><a href="./tp_js_2_exo1.html">TP2</a></li>
+          <li><a href="./tp_js_3_ajax.html">TP3</a></li>
+          <li><a href="./tp_js_4_worker.html">TP4</a></li>
+          <li><a href="#">JSP</a>relation4</li>
+        </ul>
+      </aside>
+    </main>
+    
+    <script>
+    
+    
+    var compteur=2;
+    var intervalId = null;
+    function lancerCompteur(){
+      intervalId = setInterval(tic, 1000);
     }
-  }
-  
-  function fin() {
-    clearInterval(intervalId);
-    compteur=10;
-    document.getElementById("decompte").innerHTML="Joli Drop";
-    document.getElementById("image").innerHTML='<img src="./media/hh.png"/>';
-  }
-  
-  </script>
-  <canvas id="canvas" width="600" height="600"></canvas>
-  <div style="display:none;" >
-    <img id="mirror" src="./media/mirror.png" width="50" height="50" />
-  </div>
-  <div style="display:none;" >
-    <img id="exalt" src="./media/exalt.png" width="50" height="50" />
-  </div>
-  <div style="display:none;" >
-    <img id="chaos" src="./media/chaos.png" width="50" height="50" />
-  </div>
-  <script>
-  var compteurM=0;
-  var compteurC=0;
-  var compteurE=0;
-  var compteurT=0;
-  var compteury=0;
-  var intervalIdD = null;
-  
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  var imageC = document.getElementById("chaos");
-  ctx.drawImage(imageC, 0,100,50,50);
-  var imageM = document.getElementById("mirror");
-  ctx.drawImage(imageM, 0,0,50,50);
-  var imageE = document.getElementById("exalt");
-  ctx.drawImage(imageE, 0,50,50,50);
-  
-  function lancerDeplacement(){
-    intervalIdD = setInterval(pixel, 100);
-  }
-  
-  function pixel() {
-    compteurM=compteurM+10;
-    if(compteurM<=500){
-      compteurT++;
-      ctx.clearRect(compteurM-10, compteury, 50+2, 50+2);
-      ctx.drawImage(imageM, compteurM,compteury,50,50);
-    }
-    if(compteurT>=10){
-      compteurE=compteurE+10;
-      if(compteurE<=500){
-        ctx.clearRect(compteurE-10, compteury+50, 50+2, 50+2);
-        ctx.drawImage(imageE, compteurE,compteury+50,50,50);
+    
+    function tic() {
+      compteur--;
+      if(compteur==0) fin();
+      else {
+        document.getElementById("decompte").innerHTML=compteur+" secondes restantes";
       }
     }
-    if(compteurT>=30){
-      compteurC=compteurC+10;
-      ctx.clearRect(compteurC-10, compteury+100, 50+2, 50+2);
-      ctx.drawImage(imageC, compteurC,compteury+100,50,50);
-      if(compteurC>=500) finD();
-    }
-  }
-  
-  function finD() {
-    compteury=compteury+50;
-    compteurT=0;
-    compteurM=0;
-    compteurC=0;
-    compteurE=0;
     
-    clearInterval(intervalIdD);
-  }
-</script>
-
-</body>
-
-
-</html>
+    function fin() {
+      clearInterval(intervalId);
+      compteur=10;
+      document.getElementById("decompte").innerHTML="Joli Drop";
+      document.getElementById("image").innerHTML='<img src="./media/hh.png"/>';
+    }
+    
+    </script>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <div style="display:none;" >
+      <img id="mirror" src="./media/mirror.png" width="50" height="50" />
+    </div>
+    <div style="display:none;" >
+      <img id="exalt" src="./media/exalt.png" width="50" height="50" />
+    </div>
+    <div style="display:none;" >
+      <img id="chaos" src="./media/chaos.png" width="50" height="50" />
+    </div>
+    <script>
+    var compteurM=0;
+    var compteurC=0;
+    var compteurE=0;
+    var compteurT=0;
+    var compteury=0;
+    var intervalIdD = null;
+    
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var imageC = document.getElementById("chaos");
+    ctx.drawImage(imageC, 0,100,50,50);
+    var imageM = document.getElementById("mirror");
+    ctx.drawImage(imageM, 0,0,50,50);
+    var imageE = document.getElementById("exalt");
+    ctx.drawImage(imageE, 0,50,50,50);
+    
+    function lancerDeplacement(){
+      intervalIdD = setInterval(pixel, 100);
+    }
+    
+    function pixel() {
+      compteurM=compteurM+10;
+      if(compteurM<=500){
+        compteurT++;
+        ctx.clearRect(compteurM-10, compteury, 50+2, 50+2);
+        ctx.drawImage(imageM, compteurM,compteury,50,50);
+      }
+      if(compteurT>=10){
+        compteurE=compteurE+10;
+        if(compteurE<=500){
+          ctx.clearRect(compteurE-10, compteury+50, 50+2, 50+2);
+          ctx.drawImage(imageE, compteurE,compteury+50,50,50);
+        }
+      }
+      if(compteurT>=30){
+        compteurC=compteurC+10;
+        ctx.clearRect(compteurC-10, compteury+100, 50+2, 50+2);
+        ctx.drawImage(imageC, compteurC,compteury+100,50,50);
+        if(compteurC>=500) finD();
+      }
+    }
+    
+    function finD() {
+      compteury=compteury+50;
+      compteurT=0;
+      compteurM=0;
+      compteurC=0;
+      compteurE=0;
+      
+      clearInterval(intervalIdD);
+    }
+    </script>
+    
+  </body>
+  
+  
+  </html>
+  
