@@ -81,12 +81,12 @@ function workerloop(){
     
     if (window.Worker) {
       const myWorker = new Worker("./workerCoord.js");
-      myWorker.postMessage();
+      myWorker.postMessage(1);
       myWorker.onmessage = function(e) {
         var x = e.data;
         console.log('Message received from worker');
       }
-      myWorker.postMessage();
+      myWorker.postMessage(1);
       myWorker.onmessage = function(e) {
         var y = e.data;
         console.log('Message received from worker');
