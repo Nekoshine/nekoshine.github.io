@@ -4,4 +4,3 @@ onmessage = function() {
   console.log('Worker: Posting message back to main script');
   postMessage(workerResult);
 }
-}
